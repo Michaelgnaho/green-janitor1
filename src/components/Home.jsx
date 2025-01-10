@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 
 const CarouselHero = () => {
   const [activeIndex, setActiveIndex] = useState(0);
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
 
   const slides = [
     {
@@ -11,7 +14,7 @@ const CarouselHero = () => {
     },
     {
       image: "https://scontent.flos1-3.fna.fbcdn.net/v/t39.30808-6/448177546_776940557946728_1140011513733229615_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHgWctNBviFBBTlWxqumqElRcGqPPPuB-BFwao88-4H4J7NR0FzFLjncSkR6Tw0NfS8BZJmUoA6oRiKdD663JPC&_nc_ohc=zAoum4y8fAAQ7kNvgHWXGIX&_nc_zt=23&_nc_ht=scontent.flos1-3.fna&_nc_gid=AeAdU_7bsHy0U16DF4KNjgZ&oh=00_AYCKmFvNppfUhBHfs66zTLZl6RP2dkgttd2zE14rshbvlA&oe=6786E6A3",
-      title: "Community Impact",
+      title: "Community Impact", 
       description: "Making a difference in every space we clean"
     },
     {
@@ -28,8 +31,38 @@ const CarouselHero = () => {
     return () => clearInterval(timer);
   }, []);
 
+  const handleTouchStart = (e) => {
+    setTouchStart(e.touches[0].clientX);
+  };
+
+  const handleTouchMove = (e) => {
+    setTouchEnd(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+
+    if (isLeftSwipe) {
+      setActiveIndex((current) => (current + 1) % slides.length);
+    } else if (isRightSwipe) {
+      setActiveIndex((current) => (current - 1 + slides.length) % slides.length);
+    }
+
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+
   return (
-    <div className="relative h-screen w-full overflow-hidden">
+    <div 
+      className="relative h-screen w-full overflow-hidden"
+      onTouchStart={handleTouchStart}
+      onTouchMove={handleTouchMove}
+      onTouchEnd={handleTouchEnd}
+    >
       {/* Carousel Slides */}
       <div className="absolute inset-0">
         {slides.map((slide, index) => (
@@ -44,26 +77,28 @@ const CarouselHero = () => {
               alt={slide.title}
               className="h-full w-full object-cover"
             />
-            <div className="absolute inset-0 bg-black/40" /> {/* Overlay */}
+            <div className="absolute inset-0 bg-black/40" />
           </div>
         ))}
       </div>
 
       {/* Content */}
       <div className="relative z-10 h-full flex flex-col justify-center items-center text-white p-4">
-        <div className="max-w-4xl text-center space-y-6">
-          <h1 className="text-5xl md:text-7xl font-bold mb-4 tracking-tight">
+        <div className="max-w-4xl text-center space-y-4 sm:space-y-6">
+          <h1 className="text-4xl sm:text-5xl md:text-7xl font-bold mb-2 sm:mb-4 tracking-tight">
             <span className="block mb-2">Green Janitors</span>
-            <span className="block text-emerald-400">Sustainable Initiative</span>
+            <span className="block text-3xl sm:text-4xl md:text-5xl text-emerald-400">
+              Sustainable Initiative
+            </span>
           </h1>
-          <p className="text-xl text-gray-200 max-w-2xl mx-auto">
+          <p className="text-lg sm:text-xl text-gray-200 max-w-2xl mx-auto">
             {slides[activeIndex].description}
           </p>
-          <div className="flex flex-wrap justify-center gap-4 mt-8">
-            <button className="px-8 py-4 bg-emerald-600 hover:bg-emerald-500 rounded-lg font-semibold transition duration-300">
+          <div className="flex flex-col sm:flex-row justify-center gap-4 mt-6 sm:mt-8">
+            <button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-emerald-600 hover:bg-emerald-500 rounded-lg font-semibold transition duration-300">
               Get Started
             </button>
-            <button className="px-8 py-4 bg-white/10 hover:bg-white/20 rounded-lg font-semibold transition duration-300 backdrop-blur-sm">
+            <button className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-white/10 hover:bg-white/20 rounded-lg font-semibold transition duration-300 backdrop-blur-sm">
               Learn More
             </button>
           </div>
@@ -71,16 +106,16 @@ const CarouselHero = () => {
       </div>
 
       {/* Carousel Navigation */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
-        <div className="flex space-x-3">
+      <div className="absolute bottom-16 sm:bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+        <div className="flex space-x-2 sm:space-x-3">
           {slides.map((_, index) => (
             <button
               key={index}
               onClick={() => setActiveIndex(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`h-2 sm:h-3 rounded-full transition-all duration-300 ${
                 activeIndex === index 
-                  ? 'bg-white w-8' 
-                  : 'bg-white/50 hover:bg-white/75'
+                  ? 'bg-white w-6 sm:w-8' 
+                  : 'bg-white/50 hover:bg-white/75 w-2 sm:w-3'
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />

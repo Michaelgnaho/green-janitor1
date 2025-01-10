@@ -1,7 +1,4 @@
-
-	
-
-	import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { ChevronDown, ChevronUp } from 'lucide-react';
 
@@ -156,7 +153,7 @@ function FAQ() {
                 variants={containerVariants}
             >
                 <motion.h2 
-                    className="text-5xl font-bold bg-gradient-to-r from-green-800 via-green-600 to-green-400 bg-clip-text text-transparent inline-block mb-12 text-center w-full"
+                    className="text-3xl sm:text-4xl md:text-5xl font-bold bg-gradient-to-r from-green-800 via-green-600 to-green-400 bg-clip-text text-transparent inline-block mb-4 sm:mb-6"
                     variants={itemVariants}
                 >
                     Frequently Asked Questions

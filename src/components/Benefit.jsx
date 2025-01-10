@@ -133,7 +133,7 @@ const Benefit = () => {
                     className="relative"
                 >
                     <motion.h2
-                        className="text-5xl font-bold text-center bg-gradient-to-r from-green-800 via-green-600 to-green-400 bg-clip-text text-transparent mb-4"
+                        className="text-3xl font-bold text-center bg-gradient-to-r from-green-800 via-green-600 to-green-400 bg-clip-text text-transparent mb-4"
                         initial={{ opacity: 0, y: -20 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
