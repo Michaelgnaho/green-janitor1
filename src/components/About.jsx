@@ -131,7 +131,7 @@ import { motion } from 'framer-motion';
             className="text-center mb-12 sm:mb-20"
             variants={itemVariants}
           >
-            <h1 className="text-4xl sm:text-6xl font-bold bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-400 bg-clip-text text-transparent inline-block mb-4 sm:mb-6">
+            <h1 className="text-4xl slide-left  sm:text-6xl font-bold bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-400 bg-clip-text text-transparent inline-block mb-4 sm:mb-6">
               About us
               {/* <span className="block text-2xl sm:text-4xl mt-2">Sustainable Initiative</span> */}
             </h1>
