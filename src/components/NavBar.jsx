@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import Logo from "../assets/GjLogo.jpg"
 
 const MenuIcon = () => (
   <svg viewBox="0 0 24 24" className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth="2">
@@ -62,9 +63,9 @@ function NavBar() {
           >
             <div className="relative">
               <img 
-                className="h-10 w-10 rounded-sm transition-transform duration-300 group-hover:scale-110" 
-                src="https://scontent.flos1-2.fna.fbcdn.net/v/t1.6435-9/73399896_108669583900399_2543520864377241600_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFto9BdRn5_H3djnFMw3EyBz1Yv5e-yQmLPVi_l77JCYmtnpattvszYPKW6pCcX1GOerb2wKX4U32vs4vVS9xO9&_nc_ohc=-yCm4UwTqqkQ7kNvgFAHKed&_nc_zt=23&_nc_ht=scontent.flos1-2.fna&_nc_gid=ALl_yB-Gfav1-nmZZA0s5kr&oh=00_AYDh_Uu7wMirQrtBk2iQfy5J4odjnwrlbDc3u1QrZZmgdw&oe=67A8632D" 
-                alt="Logo" 
+                className="h-12 w-12 rounded-sm transition-transform duration-300 group-hover:scale-110" 
+                src={Logo}
+                alt="Logo"
               />
               <div className="absolute inset-0 bg-emerald-500 rounded-full transform scale-0 group-hover:scale-100 transition-transform duration-300 -z-10" />
             </div>

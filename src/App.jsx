@@ -12,6 +12,7 @@ import Testimonials from "./components/Testimonials.jsx";
 // import Newsletter from "./components/NewsLetter.jsx";
 import Benefit from "./components/Benefit.jsx";
 import Stats from "./components/Stats.jsx";
+import './index.css'
 
 function App() {
 

@@ -1,86 +1,188 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+/* @import '@fortawesome/fontawesome-free/css/all.min.css'; */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  /* color-scheme: white; */
+}
+
+.hash-span {
+  margin-top: -100px;
+  padding-bottom: 100px;
+  display: block;
+}
+
+.clementine-50-bg {
+	background-color: #fff9ed;
+   }
+   
+   .clementine-100-bg {
+	background-color: #fff1d4;
+   }
+   
+   .clementine-200-bg {
+	background-color: #ffe0a9;
+   }
+   
+   .clementine-300-bg {
+	background-color: #ffc872;
+   }
+   
+   .clementine-400-bg {
+	background-color: #fea639;
+   }
+   
+   .clementine-500-bg {
+	background-color: #fd8a12;
+   }
+   
+   .clementine-600-bg {
+	background-color: #e96c08;
+   }
+   
+   .clementine-700-bg {
+	background-color: #c55309;
+   }
+   
+   .clementine-800-bg {
+	background-color: #9c4110;
+   }
+   
+   .clementine-900-bg {
+	background-color: #7e3710;
+   }
+   
+   .clementine-950-bg {
+	background-color: #441906;
+   }
+
+   .text-clementine-500-bg{
+      color: #fd8a12;
+
+   }
+   .headingText{
+      color: #7e3710;
+   }
+
+   
+   
+   /* Gradient classes */
+   .clementine-light-gradient {
+	background: linear-gradient(to left, #ffffff, #fff9ed);
+   }
+   
+   .clementine-mid-gradient {
+	background: linear-gradient(to right, #fea639, #fd8a12);
+   }
+   
+   .clementine-dark-gradient {
+	background: linear-gradient(to right, #7e3710, #441906);
+   }
+   
+   /* Text gradient classes */
+   .clementine-text-light {
+	background: linear-gradient(to top, #ffc872, #fff9ed);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+   }
+   
+   .clementine-text-mid {
+	background: linear-gradient(to top, #fd8a12, #fea639);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+   }
+   
+   .clementine-text-dark {
+	background: linear-gradient(to top, #441906, #7e3710);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+   }
 
 
    /* Slide from left */
-   @keyframes slideFromLeft {
-	from {
-	  opacity: 0;
-	  transform: translateX(-100px);
-	}
-	to {
-	  opacity: 1;
-	  transform: translateX(0);
-	}
-  }
-  
-  /* Slide from right */
-  @keyframes slideFromRight {
-	from {
-	  opacity: 0;
-	  transform: translateX(100px);
-	}
-	to {
-	  opacity: 1;
-	  transform: translateX(0);
-	}
-  }
-  
-  /* Slide from top */
-  @keyframes slideFromTop {
-	from {
-	  opacity: 0;
-	  transform: translateY(-100px);
-	}
-	to {
-	  opacity: 1;
-	  transform: translateY(0);
-	}
-  }
-  
-  /* Slide from bottom */
-  @keyframes slideFromBottom {
-	from {
-	  opacity: 0.5;
-	  transform: translateY(100px);
-	}
-	to {
-	  opacity: 1;
-	  transform: translateY(0);
-	}
-  }
-  @keyframes appear { from 
-	{ opacity: 0; 
-	   clip-path: inset(100% 100% 0 0); }
-   to { opacity: 1; clip-path: inset(0 0 0 0); } } 
-  .slide-middle { animation: appear linear; 
-	animation-timeline: view(); 
-	animation-range: entry 0% cover 10%; }
-  
-  /* Apply animations to elements */
-  .slide-left {
-	animation: slideFromLeft linear;
-	animation-timeline: view();
-	animation-range: entry 0% cover 40%;
-  }
-  
-  .slide-right {
-	animation: slideFromRight linear;
-	animation-timeline: view();
-	animation-range: entry 0% cover 40%;
-  }
-  
-  .slide-top {
-	animation: slideFromTop linear;
-	animation-timeline: view();
-	animation-range: entry 0% cover 40%;
-  }
-  
-  .slide-bottom {
-	animation: slideFromBottom linear;
-	animation-timeline: view();
-	animation-range: entry 0% cover 40%;
-  }
+@keyframes slideFromLeft {
+   from {
+     opacity: 0;
+     transform: translateX(-100px);
+   }
+   to {
+     opacity: 1;
+     transform: translateX(0);
+   }
+ }
+ 
+ /* Slide from right */
+ @keyframes slideFromRight {
+   from {
+     opacity: 0;
+     transform: translateX(100px);
+   }
+   to {
+     opacity: 1;
+     transform: translateX(0);
+   }
+ }
+ 
+ /* Slide from top */
+ @keyframes slideFromTop {
+   from {
+     opacity: 0;
+     transform: translateY(-100px);
+   }
+   to {
+     opacity: 1;
+     transform: translateY(0);
+   }
+ }
+ 
+ /* Slide from bottom */
+ @keyframes slideFromBottom {
+   from {
+     opacity: 0.5;
+     transform: translateY(100px);
+   }
+   to {
+     opacity: 1;
+     transform: translateY(0);
+   }
+ }
+ @keyframes appear { from 
+   { opacity: 0; 
+      clip-path: inset(100% 100% 0 0); }
+  to { opacity: 1; clip-path: inset(0 0 0 0); } } 
+ .slide-middle { animation: appear linear; 
+   animation-timeline: view(); 
+   animation-range: entry 0% cover 10%; }
+ 
+ /* Apply animations to elements */
+ .slide-left {
+   animation: slideFromLeft linear;
+   animation-timeline: view();
+   animation-range: entry 0% cover 40%;
+ }
+ 
+ .slide-right {
+   animation: slideFromRight linear;
+   animation-timeline: view();
+   animation-range: entry 0% cover 40%;
+ }
+ 
+ .slide-top {
+   animation: slideFromTop linear;
+   animation-timeline: view();
+   animation-range: entry 0% cover 40%;
+ }
+ 
+ .slide-bottom {
+   animation: slideFromBottom linear;
+   animation-timeline: view();
+   animation-range: entry 0% cover 40%;
+ }

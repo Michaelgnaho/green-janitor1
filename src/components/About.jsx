@@ -37,7 +37,7 @@ import { motion } from 'framer-motion';
         <div className="absolute inset-0 bg-gradient-to-b from-emerald-50 to-white opacity-90" />
         
         <div className="relative">
-          <h3 className="text-xl sm:text-2xl font-bold text-emerald-800 mb-2 sm:mb-3">{title}</h3>
+          <h3 className="text-xl slide-right sm:text-2xl font-bold text-emerald-800 mb-2 sm:mb-3">{title}</h3>
           <p className="text-sm sm:text-base text-emerald-700 mb-3 sm:mb-4">{description}</p>
           
           {stats && (
@@ -135,7 +135,7 @@ import { motion } from 'framer-motion';
               About us
               {/* <span className="block text-2xl sm:text-4xl mt-2">Sustainable Initiative</span> */}
             </h1>
-            <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-400 mx-auto rounded-full mb-6 sm:mb-8" />
+            <div className="w-24 sm:w-32 h-1 bg-gradient-to-r from-emerald-800 via-emerald-600 to-emerald-400 mx-auto rounded-full mb-6 sm:mb-8 slide-left" />
             <p className="text-lg sm:text-xl text-emerald-700 slide-left max-w-3xl mx-auto leading-relaxed px-4">
               Our mission is to revolutionize the cleaning industry through sustainable practices
               and community engagement, creating a cleaner, greener future for generations to come.
