@@ -1,6 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import TeamMemberCard from "../components/UI/TeamMemberCard.jsx";
+import Janet from "../assets/janet.jpg";
+import bello from "../assets/bello.jpg";
+import daniel from "../assets/daniel.jpg";
+import musodiq from "../assets/musodiq.jpg";
+import fausiat from "../assets/fausiat.jpg";
+import eniola from "../assets/eniola.jpg";
 
 const teamMembers = [
   {
@@ -15,42 +21,42 @@ const teamMembers = [
     name: "Janet Konko",
     role: "Executive Secretary",
     bio: "Janet Konko oversees the administrative functions and ensures smooth operations within the organization.",
-    imgSrc: "/api/placeholder/300/300",
+    imgSrc: Janet,
     imgAlt: "Profile picture of Janet Konko",
   },
   {
     name: "Sheriff Bello",
     role: "Project Coordinator",
     bio: "Sheriff Bello coordinates various projects, ensuring they are completed on time and meet the organization's standards.",
-    imgSrc: "/api/placeholder/300/300",
+    imgSrc: bello,
     imgAlt: "Profile picture of Sheriff Bello",
   },
   {
     name: "Daniel Padonu",
     role: "Legal Adviser",
     bio: "Daniel Padonu provides legal advice to the organization, ensuring compliance with laws and regulations.",
-    imgSrc: "/api/placeholder/300/300",
+    imgSrc: daniel,
     imgAlt: "Profile picture of Daniel Padonu",
   },
   {
     name: "Musodiq AbdulHameed",
     role: "Creative Director",
     bio: "Musodiq AbdulHameed leads the creative team, developing innovative ideas to promote the organization's mission.",
-    imgSrc: "/api/placeholder/300/300",
+    imgSrc: musodiq,
     imgAlt: "Profile picture of Musodiq AbdulHameed",
   },
   {
     name: "Orunsolu Fausiyat",
     role: "Lead Advocate",
     bio: "Orunsolu Fausiyat leads advocacy efforts, raising awareness about environmental sustainability and climate action.",
-    imgSrc: "/api/placeholder/300/300",
+    imgSrc: fausiat,
     imgAlt: "Profile picture of Orunsolu Fausiyat",
   },
   {
     name: "Eniola Lawal",
     role: "Media and Communication Manager",
     bio: "Eniola Lawal manages media relations and communication strategies to effectively convey the organization's messages.",
-    imgSrc: "/api/placeholder/300/300",
+    imgSrc: eniola,
     imgAlt: "Profile picture of Eniola Lawal",
   },
 ];
