@@ -1,27 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import h1 from "../assets/h1.jpg";
+import h2 from "../assets/h2.jpg";
+import h3 from "../assets/h3.jpg";
 
 const CarouselHero = () => {
   const [activeIndex, setActiveIndex] = useState(0);
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
-
   const slides = [
     {
-      image: "https://scontent.flos1-2.fna.fbcdn.net/v/t39.30808-6/447900868_776940504613400_5161249796086474427_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGLU0LnPo-dS7uF4p4q-iuT2E4GBRfvkzvYTgYFF--TO7RmjS3w2DI3oHMahB28Cd0E9RhtYme6FNfRUKCSTWgL&_nc_ohc=Gcx8IecyHVMQ7kNvgHvQOIh&_nc_zt=23&_nc_ht=scontent.flos1-2.fna&_nc_gid=Agv8wJv4QD4i7OqYVGzJjMH&oh=00_AYBqolyHMX8URb6Z_2LIC-9Qxrz4ZcrRFxvAx8Buo3owWw&oe=6786DFE8",
+      image: h1,
+
       title: "Sustainable Cleaning",
-      description: "Eco-friendly solutions for a cleaner tomorrow"
+      description: "Eco-friendly solutions for a cleaner tomorrow",
     },
     {
-      image: "https://scontent.flos1-3.fna.fbcdn.net/v/t39.30808-6/448177546_776940557946728_1140011513733229615_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeHgWctNBviFBBTlWxqumqElRcGqPPPuB-BFwao88-4H4J7NR0FzFLjncSkR6Tw0NfS8BZJmUoA6oRiKdD663JPC&_nc_ohc=zAoum4y8fAAQ7kNvgHWXGIX&_nc_zt=23&_nc_ht=scontent.flos1-3.fna&_nc_gid=AeAdU_7bsHy0U16DF4KNjgZ&oh=00_AYCKmFvNppfUhBHfs66zTLZl6RP2dkgttd2zE14rshbvlA&oe=6786E6A3",
-      title: "Community Impact", 
-      description: "Making a difference in every space we clean"
+      image: h2,
+      title: "Community Impact",
+      description: "Making a difference in every space we clean",
     },
     {
-      image: "https://scontent.flos1-3.fna.fbcdn.net/v/t39.30808-6/448095512_776940501280067_8655411871289647043_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=127cfc&_nc_eui2=AeGI9GUD4doaX37SQD_MscNL8TkZyFa_72_xORnIVr_vb4VRljbqchttv4X-wVyvjDPppoyP-g9s3JVRLGrjQG3u&_nc_ohc=ctektvsEHZsQ7kNvgFl9M-m&_nc_zt=23&_nc_ht=scontent.flos1-3.fna&_nc_gid=AemBmpenIM-kBIrXZuGAh3i&oh=00_AYBHPT-e4qLhRsYH6I0E9m7GcNdSC4MW-_s-LzslNaeOPQ&oe=6786D987",
+      image: h3,
       title: "Green Innovation",
-      description: "Leading the way in sustainable practices"
-    }
+      description: "Leading the way in sustainable practices",
+    },
   ];
 
   useEffect(() => {
@@ -41,7 +44,7 @@ const CarouselHero = () => {
 
   const handleTouchEnd = () => {
     if (!touchStart || !touchEnd) return;
-    
+
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > 50;
     const isRightSwipe = distance < -50;
@@ -49,7 +52,9 @@ const CarouselHero = () => {
     if (isLeftSwipe) {
       setActiveIndex((current) => (current + 1) % slides.length);
     } else if (isRightSwipe) {
-      setActiveIndex((current) => (current - 1 + slides.length) % slides.length);
+      setActiveIndex(
+        (current) => (current - 1 + slides.length) % slides.length
+      );
     }
 
     setTouchStart(null);
@@ -57,7 +62,7 @@ const CarouselHero = () => {
   };
 
   return (
-    <div 
+    <div
       className="relative h-screen w-full overflow-hidden"
       onTouchStart={handleTouchStart}
       onTouchMove={handleTouchMove}
@@ -69,7 +74,7 @@ const CarouselHero = () => {
           <div
             key={index}
             className={`absolute inset-0 transition-opacity duration-1000 ease-in-out ${
-              activeIndex === index ? 'opacity-100' : 'opacity-0'
+              activeIndex === index ? "opacity-100" : "opacity-0"
             }`}
           >
             <img
@@ -113,9 +118,9 @@ const CarouselHero = () => {
               key={index}
               onClick={() => setActiveIndex(index)}
               className={`h-2 sm:h-3 rounded-full transition-all duration-300 ${
-                activeIndex === index 
-                  ? 'bg-white w-6 sm:w-8' 
-                  : 'bg-white/50 hover:bg-white/75 w-2 sm:w-3'
+                activeIndex === index
+                  ? "bg-white w-6 sm:w-8"
+                  : "bg-white/50 hover:bg-white/75 w-2 sm:w-3"
               }`}
               aria-label={`Go to slide ${index + 1}`}
             />
@@ -128,7 +133,7 @@ const CarouselHero = () => {
         <div
           className="h-full bg-emerald-500 transition-all duration-500 ease-out"
           style={{
-            width: `${((activeIndex + 1) / slides.length) * 100}%`
+            width: `${((activeIndex + 1) / slides.length) * 100}%`,
           }}
         />
       </div>

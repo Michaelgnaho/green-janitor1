@@ -7,14 +7,14 @@ import daniel from "../assets/daniel.jpg";
 import musodiq from "../assets/musodiq.jpg";
 import fausiat from "../assets/fausiat.jpg";
 import eniola from "../assets/eniola.jpg";
+import ashade from "../assets/ashade.jpg";
 
 const teamMembers = [
   {
     name: "Ashade Abdulsalam Abiodun",
     role: "Founder & CEO",
     bio: "Ashade Abdulsalam Abiodun is an Accountant, Environmental Ambassador, climate change youth advocate, and environmental sustainability consultant for corporate organizations and NGOs with pragmatic solutions to environmental issues. He is an Associate Environment and Safety Manager (AESM) and a Health, Safety and Environment 1,2 and 3 Holder. Ashade is a member of the Association of Nigeria Accountants of Nigeria (ANAN), a member of the Nigeria Institute of Management (NIM), and a Certified Solid Waste Manager (SWM). A 2024 Mandela Washington Fellow and a member of the Technical Working Group on Youth Engagement in the Ministry of Youth and Social Development, Lagos State Government. He obtained his first and second degrees (BSc and MSc) in accounting from Lagos State University, Ojo, and a certification in Leadership in Public Management from Boise State University, Idaho, USA. He is the founder and Executive Director of the Green Janitors Sustainable Initiative and serves as the Managing Director for Janirak Recyclers Global Enterprises. He is also the founder of CAMPUS RECYCLING CHAMPIONS, engaging tertiary students in advocacy for a sustainable environment, climate action, and Circular Economy. He has been a Lead Trainer for the LSETF-USADF Employability Program on Waste Economy and Recycling for Youths and a Facilitator at the Lagos Ibile Youth Academy, focusing on climate change and environmental sustainability.",
-    imgSrc:
-      "https://scontent.flos1-2.fna.fbcdn.net/v/t1.6435-9/174391410_476023213831699_3323120039732280339_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=3a1ebe&_nc_eui2=AeFkgcSV12dapNOBOhJmfr-drDgTybsMejusOBPJuwx6O-fMafui0ocNTn-Ww9UDOITDf7qM49-UG3pl7qcxSyKa&_nc_ohc=fX2os_9TjUoQ7kNvgFiT-U2&_nc_zt=23&_nc_ht=scontent.flos1-2.fna&_nc_gid=AGlVSDwmNDWLueWFdfQikce&oh=00_AYDwij2tcb9fWm7pZRIJHy6D5ggFgxiDIK0Av0ZnIsqrIA&oe=67A88C1A",
+    imgSrc: ashade,
     imgAlt: "Profile picture of Ashade Abdulsalam Abiodun",
   },
   {
